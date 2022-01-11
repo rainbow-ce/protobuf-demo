@@ -1,11 +1,14 @@
+syntax = "proto3";
+
 package demo;
 
 option java_package = "com.example.tutorial";
 option java_outer_classname = "PersonProtos";
+option go_package = "./;demo";
 
 message People {
-    required string name = 1;
-    required int32 id = 2;
-    required string email = 3;
+    string name = 1;
+    int32 id = 2;
+    string email = 3;
 }
 

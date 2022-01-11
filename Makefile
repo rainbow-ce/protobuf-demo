@@ -1,6 +1,8 @@
 all:
 	protoc --cpp_out=. demo.people.proto
 	protoc --java_out=. demo.people.proto
+        protoc --go_out=. demo.people.proto
+        mv demo.people.pb.go gotest/src/
 	g++ -g -Wall server.cc demo.people.pb.cc -o s -lprotobuf
 	g++ -g -Wall client.cc demo.people.pb.cc -o c -lprotobuf
 	javac TestPeople.java com/example/tutorial/PersonProtos.java
